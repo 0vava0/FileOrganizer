@@ -23,7 +23,7 @@
 
 | Главное окно | Окно настроек |
 |--------------|---------------|
-| *()* | *()* |
+| *(вставьте сюда скриншот главного окна)* | *(вставьте сюда скриншот окна настроек)* |
 
 ---
 
@@ -38,3 +38,9 @@
 2. Скачайте последнюю версию `FileOrganizer.zip`
 3. Распакуйте архив в любую папку
 4. Запустите `FileOrganizer.exe`
+
+### Сборка из исходников
+git clone https://github.com/ваш_ник/FileOrganizer.git
+cd FileOrganizer
+dotnet restore
+dotnet build --configuration Release
