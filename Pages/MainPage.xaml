@@ -5,18 +5,18 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FileOrganizer.Pages"
       mc:Ignorable="d" 
-      MinWidth="450" MinHeight="130"
+      Width="450" Height="120"
       Title="MainPage">
 
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="15"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="1" Margin="20 0 40 0">
+        <Grid Grid.Row="1" Margin="40 0 20 0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
@@ -57,7 +57,7 @@
             </Button>
         </Grid>
         <Button x:Name="ButSetting"
-            HorizontalAlignment="Right"
+            HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Grid.Row="0"
             Width="30"
@@ -70,9 +70,11 @@
             Content="⚙️"/>
         <Button x:Name="Perform"
                     Grid.Row="3"
-                    HorizontalAlignment="Center"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Bottom"
                     Width="140"
                     Height="30"
+                    Margin="5"
                     Style="{StaticResource ExecuteButton}"
                     Content="Выполнить"
                     Cursor="Hand"

@@ -51,7 +51,7 @@ namespace FileOrganizer.Pages
             }
             foreach (var categoryName in _currentConfig.Categories)
             {
-                NameCategiryList.Add(categoryName.Name);
+                NameCategiryList.Add(categoryName.DisplayName);
             }
             NameCategiryList.Add("Добавить новую");
             SetCategory.ItemsSource = NameCategiryList;
@@ -120,10 +120,11 @@ namespace FileOrganizer.Pages
         private async void SetCategory_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ButRemove.Visibility = Visibility.Visible;
+            ButRemove.Width = 60;
             ClearText();
             await Task.Delay(10);
             string selectedCategoryName = SetCategory.SelectedItem.ToString();
-            var existingCategory = _currentConfig.Categories.FirstOrDefault(c => string.Equals(c.Name, selectedCategoryName, StringComparison.OrdinalIgnoreCase));
+            var existingCategory = _currentConfig.Categories.FirstOrDefault(c => string.Equals(c.DisplayName, selectedCategoryName, StringComparison.OrdinalIgnoreCase));
             if (existingCategory != null)
             {
                 NameText.Text = existingCategory.Name;
@@ -133,6 +134,7 @@ namespace FileOrganizer.Pages
             else
             {
                 ButRemove.Visibility = Visibility.Hidden;
+                ButRemove.Width = 0;
                 ClearText();
             }
         }
@@ -166,7 +168,7 @@ namespace FileOrganizer.Pages
         private void UpdateCategory(string Name, string DisplayName, List<string> ExtensionsList)
         {
             string selectedCategoryName = SetCategory.SelectedItem.ToString();
-            var existingCategory = _currentConfig.Categories.FirstOrDefault(c => string.Equals(c.Name, selectedCategoryName, StringComparison.OrdinalIgnoreCase));
+            var existingCategory = _currentConfig.Categories.FirstOrDefault(c => string.Equals(c.DisplayName, selectedCategoryName, StringComparison.OrdinalIgnoreCase));
 
             if (existingCategory == null)
             {
@@ -191,7 +193,7 @@ namespace FileOrganizer.Pages
         private void RemoveCategory()
         {
             string selectedCategoryName = SetCategory.SelectedItem.ToString();
-            var existingCategory = _currentConfig.Categories.FirstOrDefault(c => string.Equals(c.Name, selectedCategoryName, StringComparison.OrdinalIgnoreCase));
+            var existingCategory = _currentConfig.Categories.FirstOrDefault(c => string.Equals(c.DisplayName, selectedCategoryName, StringComparison.OrdinalIgnoreCase));
             var Handle = MessageBox.Show($"Уверенны в удалении категории '{existingCategory.DisplayName}'!", "Подтверждение", MessageBoxButton.YesNo, MessageBoxImage.Hand);
             if(Handle == MessageBoxResult.Yes)
             {

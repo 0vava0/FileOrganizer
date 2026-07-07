@@ -5,54 +5,56 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FileOrganizer.Pages"
       mc:Ignorable="d" 
-      MinHeight="150" MinWidth="450"
+      MinHeight="120" MinWidth="450"
       Title="SettingPages">
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="170"/>
+            <ColumnDefinition Width="180"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
 
         <Button x:Name="Cancel"
-                Grid.Column="1"
-                Height="25"
-                Width="25"
+                Grid.Column="0"
+                Height="15"
+                Width="15"
                 VerticalAlignment="Top"
-                HorizontalAlignment="Right"
-                Margin="5"
+                HorizontalAlignment="Left"
+                Margin="0"
                 Style="{StaticResource FolderButton}"
                 Tag="Удалить категорию"
                 Click="Cancel_Click">
-            <Viewbox>
-                <Canvas Height="20" Width="20" >
+            <Viewbox Height="10" Width="10">
+                <Canvas Height="10" Width="10">
                     <Path Fill="DarkGray" 
-                        Data="M15,2 L6,10 L15,18 L17,16 L10,10 L17,4 L15,2 Z" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.494,0.556" Canvas.Left="1.5"/>
+                        Data="M15,2 L6,10 L15,18 L17,16 L10,10 L17,4 L15,2 Z" HorizontalAlignment="Left" VerticalAlignment="Center" RenderTransformOrigin="0.494,0.556" Stretch="Fill" Width="11"/>
                 </Canvas>
             </Viewbox>
         </Button>
         <Grid Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="40"/>
+                <RowDefinition Height="80"/>
             </Grid.RowDefinitions>
             <ComboBox x:Name="SetCategory"
                   SelectionChanged="SetCategory_SelectionChanged"    
                   Height="25"
-                  Width="150"
+                  Width="160"
                   VerticalAlignment="Top"
+                  HorizontalAlignment="Center"
                   Margin="0 20 0 0"
                   Grid.Row="0"
                   SelectedItem="0"/>
             <StackPanel Orientation="Horizontal"
                         Grid.Row="1"
                         HorizontalAlignment="Center"
-                        VerticalAlignment="Top">
+                        VerticalAlignment="Top"
+                        Margin="0 15 5 0">
                 <Button x:Name="ButRemove"
                         Content="Удалить"
                         Height="25"
-                        Margin="0 0 10 0"
+                        Margin="5 0 10 0"
                         Padding="3 0 3 0"
                         Style="{StaticResource ExecuteButton}"
                         Background="Red"
@@ -69,28 +71,26 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Top"
                     Margin="0 10 0 0"
-                    Grid.Column="1"
-                    >
-            <TextBox x:Name="NameText"
+                    Grid.Column="1">
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="NameText"
                      Tag="Имя"
                      Margin="0 10 0 0"
                      Height="25"
-                     MaxWidth="200"
-                     MinWidth="100"
+                     Width="100"
                      HorizontalAlignment="Left"/>
-            <TextBox x:Name="DisplayNameText"
+                <TextBox x:Name="DisplayNameText"
                      Tag="Отображаемое имя"
-                     Margin="0 10 0 0"
+                     Margin="10 10 0 0"
                      Height="25"
-                     MaxWidth="200"
-                     MinWidth="100"
+                     Width="125"
                      HorizontalAlignment="Left"/>
+            </StackPanel>
             <TextBox x:Name="ExtensionsText"
                      Tag="Расширение файлов"
                      Margin="0 10 0 0"
                      Height="50"
-                     MaxWidth="250"
-                     MinWidth="100"
+                     Width="235"
                      Style="{StaticResource NNN}"
                      HorizontalAlignment="Left"/>
         </StackPanel>
