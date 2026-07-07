@@ -1,0 +1,98 @@
+{
+  "Categories": [
+    {
+      "Name": "Images",
+      "DisplayName": "Изображения",
+      "Extensions": [
+        ".jpg",
+        ".jpeg",
+        ".png",
+        ".gif",
+        ".bmp",
+        ".tiff",
+        ".tif",
+        ".svg",
+        ".webp",
+        ".ico",
+        ".raw",
+        ".psd"
+      ]
+    },
+    {
+      "Name": "Documents",
+      "DisplayName": "Документы",
+      "Extensions": [
+        ".pdf",
+        ".doc",
+        ".docx",
+        ".xls",
+        ".xlsx",
+        ".ppt",
+        ".pptx",
+        ".txt",
+        ".rtf",
+        ".odt",
+        ".ods",
+        ".odp",
+        ".csv",
+        ".xml",
+        ".json",
+        ".md"
+      ]
+    },
+    {
+      "Name": "Archives",
+      "DisplayName": "Архивы",
+      "Extensions": [
+        ".zip",
+        ".rar",
+        ".7z",
+        ".tar",
+        ".gz",
+        ".bz2",
+        ".xz",
+        ".tgz",
+        ".iso"
+      ]
+    },
+    {
+      "Name": "Video",
+      "DisplayName": "Видео",
+      "Extensions": []
+    },
+    {
+      "Name": "Audio",
+      "DisplayName": "Аудио",
+      "Extensions": [
+        ".mp3",
+        ".wav",
+        ".flac",
+        ".aac",
+        ".ogg",
+        ".wma",
+        ".m4a",
+        ".opus"
+      ]
+    },
+    {
+      "Name": "Programs",
+      "DisplayName": "Программы",
+      "Extensions": [
+        ".exe",
+        ".msi",
+        ".bat",
+        ".cmd",
+        ".sh",
+        ".app",
+        ".deb",
+        ".rpm",
+        ".jar"
+      ]
+    },
+    {
+      "Name": "Other",
+      "DisplayName": "Прочее",
+      "Extensions": []
+    }
+  ]
+}
